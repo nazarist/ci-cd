@@ -19,9 +19,6 @@ jobs:
           docker compose exec php php artisan jwt:secret
           docker compose exec php php artisan laravel:start
           docker compose exec php php artisan config:clear
-      - run: ls -la
-      - run: cd ./tmp
-      - run: ls -la
 
       - name: migrate db
         run: docker compose exec php php artisan migrate:refresh --seed
