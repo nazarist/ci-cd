@@ -12,6 +12,12 @@ jobs:
       
       - name: run docker compose
         run: docker compose up -d --build
+      - run: docker compose exec php composer update
+
+      - name: run php test 
+        run: docker compose exec php php artisan test
+      
+      
       
 
         
