@@ -17,8 +17,9 @@ jobs:
         run: cp .env.example .env
       
       - name: run docker compose
-        run: docker compose up -d --build
-      - run: docker compose exec php composer update
+        run: | 
+          docker compose up -d --build
+          docker compose exec php composer update
 
       - name: init laravel 
         run: |
