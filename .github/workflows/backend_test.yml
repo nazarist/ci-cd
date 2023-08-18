@@ -1,6 +1,12 @@
 name: backend
 run-name: ${{ github.actor }} is pushed
-on: [push]
+
+on: 
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
 jobs:
   test:
     runs-on: ubuntu-latest
